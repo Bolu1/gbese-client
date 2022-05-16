@@ -286,17 +286,17 @@ const Wallet = () => {
                                   : d.debitorAccount}{" "}
                                 / {d.creditorAccount}
                               </td>
-                              <td className="p-4 w-1/4 invisible lg:visible ">
+                              <td className="p-4 lg:w-1/4 invisible lg:visible ">
                                 {d.createdAt}
                               </td>
                               {d.debitorAccount == user.number ? (
-                                <td className="pt-2 invisible lg:visible w-1/4">
+                                <td className="pt-2 invisible lg:visible lg:w-1/4">
                                   <button className="bg-red-200 text-red-600 font-bold py-2 px-4 rounded-full">
                                     Debit
                                   </button>
                                 </td>
                               ) : (
-                                <td className=" pt-2 invisible lg:visible w-1/4">
+                                <td className=" pt-2 invisible lg:visible lg:w-1/4">
                                   <button className="bg-green-200  text-green-600 font-bold py-2 px-4 rounded-full">
                                     Credit
                                   </button>
