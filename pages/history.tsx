@@ -94,7 +94,7 @@ const Wallet = () => {
             </div>
 
             <div className="mt-8 text-center">
-              {user.profile == null ? (
+              {profile == "" ? (
                 <p className="text-8xl">🙆🏾‍♂️</p>
               ) : (
                 <>

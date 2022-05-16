@@ -96,7 +96,7 @@ const Dashboard = () => {
               </div>
 
               <div className="mt-8 text-center">
-                {user.profile == null ? (
+                {profile == "" ? (
                   <p className="text-8xl">🙆🏾‍♂️</p>
                 ) : (
                   <>
@@ -247,7 +247,7 @@ const Dashboard = () => {
           <div className="ml-auto px-5 mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
             <div>
               <div className="mt-16 text-center">
-                {user.profile == null ? (
+                {profile == "" ? (
                   <p className="text-8xl">🙆🏾‍♂️</p>
                 ) : (
                   <>

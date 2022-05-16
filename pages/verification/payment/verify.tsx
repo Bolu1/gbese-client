@@ -44,7 +44,7 @@ const Verify = () => {
         className="absolute text-center top-50"
       >
         <h1 className="text-xl ">
-          We are processing your payment please wait 👷🏾💰
+          We are processing your payment please wait 👷🏾💰<br/>Please note we will not process the same payment twice
         </h1>
         <div className="flex items-center justify-center space-x-2 mt-5">
           <div className="w-4 h-4 rounded-full motion-safe:animate-bounce animate-pulse bg-green-400"></div>
