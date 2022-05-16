@@ -6,8 +6,8 @@ import axios from "axios";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const router = useRouter();
@@ -19,25 +19,28 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      console.log(email, password)
-      const {data} = await axios.post(
-        "http://localhost:8000/auth/signin",
+      console.log(email, password);
+      const { data } = await axios.post(
+        "https://gbese-client.herokuapp.com/auth/signin",
         { email, password }
       );
-      localStorage.setItem('gbeseprofile', data.profile)
-      const payload ={
-          ...data, profile:null
-      }
-      console.log(payload)
-      Cookies.set('user', JSON.stringify(payload), {expires: 1/24})
-      router.push('/dashboard')
+      localStorage.setItem("gbeseprofile", data.profile);
+      const payload = {
+        ...data,
+        profile: null,
+      };
+      console.log(payload);
+      Cookies.set("user", JSON.stringify(payload), { expires: 1 / 24 });
+      router.push("/dashboard");
     } catch (e) {
-      const err = e.toString()
-      if(err[err.length-1] == '1'){
-        toast.error('Your account has not yet been verified, please verify your email')
+      const err = e.toString();
+      if (err[err.length - 1] == "1") {
+        toast.error(
+          "Your account has not yet been verified, please verify your email"
+        );
         return setLoading(false);
       }
-      toast.error("Invalid login params")
+      toast.error("Invalid login params");
 
       // console.log(e);
     }
@@ -47,7 +50,7 @@ const Register = () => {
 
   return (
     <div>
-      <ToastContainer 
+      <ToastContainer
         position="top-center"
         hideProgressBar={true}
         closeOnClick
@@ -69,7 +72,7 @@ const Register = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
@@ -92,7 +95,7 @@ const Register = () => {
                 type="password"
                 required
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>

@@ -6,8 +6,8 @@ import axios from "axios";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Register = () => {
   const router = useRouter();
@@ -16,24 +16,24 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [lastName, setLastName] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [phone, setPhone] = useState("")
+  const [phone, setPhone] = useState("");
 
   const registerHandler = async (e): Promise<any> => {
     e.preventDefault();
     setLoading(true);
-    if(password.length<6){
-      toast.error("Pasword too short")
+    if (password.length < 6) {
+      toast.error("Pasword too short");
       return setLoading(false);
     }
     try {
       const response = await axios.post(
-        "http://localhost:8000/auth/signup",
+        "https://gbese-client.herokuapp.com/auth/signup",
         { email, password, lastName, firstName, phone }
       );
-      console.log(response)
-      router.push('/notification/confirm')
+      console.log(response);
+      router.push("/notification/confirm");
     } catch (e) {
-      toast.error("Email already in use")
+      toast.error("Email already in use");
       console.log(e);
     }
 
@@ -42,8 +42,7 @@ const Register = () => {
 
   return (
     <div>
-      
-      <ToastContainer 
+      <ToastContainer
         position="top-center"
         hideProgressBar={true}
         closeOnClick
@@ -65,7 +64,7 @@ const Register = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 required
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
@@ -79,7 +78,7 @@ const Register = () => {
                 type="text"
                 required
                 value={firstName}
-                onChange={(e)=>setFirstName(e.target.value)}
+                onChange={(e) => setFirstName(e.target.value)}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
@@ -92,7 +91,7 @@ const Register = () => {
                 type="text"
                 required
                 value={lastName}
-                onChange={(e)=>setLastName(e.target.value)}
+                onChange={(e) => setLastName(e.target.value)}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
@@ -105,7 +104,7 @@ const Register = () => {
                 type="text"
                 required
                 value={phone}
-                onChange={(e)=>setPhone(e.target.value)}
+                onChange={(e) => setPhone(e.target.value)}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
@@ -120,7 +119,7 @@ const Register = () => {
                 type="password"
                 required
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
                 className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 :focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>

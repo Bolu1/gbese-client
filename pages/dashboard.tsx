@@ -19,7 +19,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [balance, setBalance] = useState(0);
   const [refresh, setRefresh] = useState(false);
-  const [profile, setProfile] = useState("")
+  const [profile, setProfile] = useState("");
 
   const logoutHandler = () => {
     Cookie.remove("user");
@@ -29,11 +29,14 @@ const Dashboard = () => {
   const refreshHandler = async () => {
     try {
       setRefresh(true);
-      const { data } = await axios.get("http://localhost:8000/user/me", {
-        headers: {
-          authorization: `Bearer ${user.token}`,
-        },
-      });
+      const { data } = await axios.get(
+        "https://gbese-client.herokuapp.com/user/me",
+        {
+          headers: {
+            authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       setBalance(data.balance);
       setRefresh(false);
     } catch (error) {
@@ -45,11 +48,14 @@ const Dashboard = () => {
   useEffect(() => {
     const fetch = async (token: any) => {
       try {
-        const { data } = await axios.get("http://localhost:8000/user/me", {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        });
+        const { data } = await axios.get(
+          "https://gbese-client.herokuapp.com/user/me",
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setBalance(data.balance);
         setLoading(false);
       } catch (error) {
@@ -62,7 +68,7 @@ const Dashboard = () => {
       setUser(u);
       fetch(u.token);
     }
-    setProfile(localStorage.getItem('gbeseprofile'))
+    setProfile(localStorage.getItem("gbeseprofile"));
   }, [setUser]);
 
   return (
@@ -138,7 +144,7 @@ const Dashboard = () => {
                   <a
                     href="#"
                     className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group"
-                    onClick={()=>router.push("/wallet")}
+                    onClick={() => router.push("/wallet")}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +170,7 @@ const Dashboard = () => {
                   <a
                     href="#"
                     className="px-4 py-3 flex items-center space-x-4 cursor-pointer rounded-md text-gray-600 group"
-                    onClick={()=>router.push("/history")}
+                    onClick={() => router.push("/history")}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +194,7 @@ const Dashboard = () => {
                 </li>
                 <li>
                   <a
-                    onClick={()=>router.push("/account")}
+                    onClick={() => router.push("/account")}
                     className="px-4 py-3 flex items-center space-x-4 cursor-pointer rounded-md text-gray-600 group"
                   >
                     <svg
@@ -369,7 +375,7 @@ const Dashboard = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
-              onClick={()=>router.push("/dashboard")}
+              onClick={() => router.push("/dashboard")}
             >
               <path
                 strokeLinecap="round"
@@ -384,7 +390,7 @@ const Dashboard = () => {
               className="h-8 w-8"
               viewBox="0 0 20 20"
               fill="currentColor"
-              onClick={()=>router.push("/wallet")}
+              onClick={() => router.push("/wallet")}
             >
               <path
                 className="fill-current text-gray-300 cursor-pointer hover:text-green-500"
@@ -403,7 +409,7 @@ const Dashboard = () => {
               className="h-8 w-8"
               viewBox="0 0 20 20"
               fill="currentColor"
-              onClick={()=>router.push("/history")}
+              onClick={() => router.push("/history")}
             >
               <path
                 className="fill-current text-gray-600 cursor-pointer hover:text-green-500"
@@ -424,7 +430,7 @@ const Dashboard = () => {
               viewBox="0 0 24 24"
               stroke="currentColor"
               strokeWidth={2}
-              onClick={()=>router.push("/account")}
+              onClick={() => router.push("/account")}
             >
               <path
                 strokeLinecap="round"

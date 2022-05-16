@@ -7,7 +7,6 @@ import { useRouter } from "next/router";
 import { withAuth } from "../components/withAuth";
 import { GetServerSideProps } from "next";
 
-
 const Dashboard = () => {
   const router = useRouter();
   const [user, setUser] = useState({
@@ -20,7 +19,7 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [balance, setBalance] = useState(0);
   const [refresh, setRefresh] = useState(false);
-  const [profile, setProfile] = useState("")
+  const [profile, setProfile] = useState("");
 
   const logoutHandler = () => {
     Cookie.remove("user");
@@ -30,11 +29,14 @@ const Dashboard = () => {
   const refreshHandler = async () => {
     try {
       setRefresh(true);
-      const { data } = await axios.get("http://localhost:8000/user/me", {
-        headers: {
-          authorization: `Bearer ${user.token}`,
-        },
-      });
+      const { data } = await axios.get(
+        "https://gbese-client.herokuapp.com/user/me",
+        {
+          headers: {
+            authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       setBalance(data.balance);
       setRefresh(false);
     } catch (error) {
@@ -46,11 +48,14 @@ const Dashboard = () => {
   useEffect(() => {
     const fetch = async (token: any) => {
       try {
-        const { data } = await axios.get("http://localhost:8000/user/me", {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        });
+        const { data } = await axios.get(
+          "https://gbese-client.herokuapp.com/user/me",
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          }
+        );
         setBalance(data.balance);
         setLoading(false);
       } catch (error) {
@@ -63,7 +68,7 @@ const Dashboard = () => {
       setUser(u);
       fetch(u.token);
     }
-    setProfile(localStorage.getItem('gbeseprofile'))
+    setProfile(localStorage.getItem("gbeseprofile"));
   }, [setUser]);
 
   return (
@@ -246,7 +251,7 @@ const Dashboard = () => {
                   <p className="text-8xl">🙆🏾‍♂️</p>
                 ) : (
                   <>
-                     <img
+                    <img
                       src={profile}
                       alt=""
                       className="w-28 h-28 m-auto rounded-full object-cover lg:w-28 lg:h-28"

@@ -23,14 +23,14 @@ const Wallet = () => {
     Cookie.remove("user");
     router.push("/");
   };
-  const [profile, setProfile] = useState("")
+  const [profile, setProfile] = useState("");
 
   const transferHandler = async () => {
     setLoading(true);
     try {
       console.log(user.token);
       const response = await axios.get(
-        "http://localhost:8000/transaction/history",
+        "https://gbese-client.herokuapp.com/transaction/history",
         {
           headers: {
             authorization: `Bearer ${user.token}`,
@@ -53,7 +53,7 @@ const Wallet = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "http://localhost:8000/transaction/history",
+          "https://gbese-client.herokuapp.com/transaction/history",
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -73,7 +73,7 @@ const Wallet = () => {
       setUser(u);
       fetch(u.token);
     }
-    setProfile(localStorage.getItem('gbeseprofile'))
+    setProfile(localStorage.getItem("gbeseprofile"));
   }, [setUser]);
 
   return (

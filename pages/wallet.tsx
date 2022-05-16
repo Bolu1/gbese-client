@@ -29,7 +29,7 @@ const Wallet = () => {
   const [pay, setPay] = useState(false);
   const [banks, setBanks] = useState([]);
   const [bank, setBank] = useState("");
-  const [profile, setProfile] = useState("")
+  const [profile, setProfile] = useState("");
 
   const logoutHandler = () => {
     Cookie.remove("user");
@@ -52,7 +52,7 @@ const Wallet = () => {
         return setLoading(false);
       }
       const response = await axios.post(
-        "http://localhost:8000/payment/init",
+        "https://gbese-client.herokuapp.com/payment/init",
         {
           amount: amount.toString(),
           message: "Fund Wallet",
@@ -75,7 +75,7 @@ const Wallet = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:8000/user/getName",
+        "https://gbese-client.herokuapp.com/user/getName",
         {
           account: parseInt(account),
         },
@@ -121,7 +121,7 @@ const Wallet = () => {
       }
       console.log(user.token);
       const response = await axios.post(
-        "http://localhost:8000/transaction/transfer",
+        "https://gbese-client.herokuapp.com/transaction/transfer",
         {
           accountNumber: account.toString(),
           amount: amount.toString(),
@@ -179,11 +179,14 @@ const Wallet = () => {
   useEffect(() => {
     const fetch = async (token: any) => {
       try {
-        const { data } = await axios.get("http://localhost:8000/user/me", {
-          headers: {
-            authorization: `Bearer ${token}`,
-          },
-        });
+        const { data } = await axios.get(
+          "https://gbese-client.herokuapp.com/user/me",
+          {
+            headers: {
+              authorization: `Bearer ${token}`,
+            },
+          }
+        );
         const response = await axios.get("https://api.paystack.co/bank", {
           headers: {
             Authorization:
@@ -203,7 +206,7 @@ const Wallet = () => {
       setUser(u);
       fetch(u.token);
     }
-    setProfile(localStorage.getItem('gbeseprofile'))
+    setProfile(localStorage.getItem("gbeseprofile"));
   }, [setUser]);
 
   return (

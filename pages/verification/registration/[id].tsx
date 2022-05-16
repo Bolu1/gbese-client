@@ -1,36 +1,35 @@
 import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const VerifyEmail = () => {
-  
-    const tokenHandler = async(id) =>{
-        try {
-        const response = await axios.get(
-            "http://localhost:8000/auth/confirm",
-            {
-                headers: {
-                    'Content-Type': 'application/json',
-                    authorization: `Bearer ${id}`,
-                } 
-            }
-          );
-          router.push('/auth/login')
-          console.log(response)
-        }catch (error) {
-            // return toast.error("Invalid or expired link")
-            console.log(error)
+  const tokenHandler = async (id) => {
+    try {
+      const response = await axios.get(
+        "https://gbese-client.herokuapp.com/auth/confirm",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${id}`,
+          },
         }
+      );
+      router.push("/auth/login");
+      console.log(response);
+    } catch (error) {
+      // return toast.error("Invalid or expired link")
+      console.log(error);
     }
-    const router = useRouter();
-    const { id } = router.query;
-    tokenHandler(id)
+  };
+  const router = useRouter();
+  const { id } = router.query;
+  tokenHandler(id);
 
   return (
     <div>
-         <ToastContainer 
+      <ToastContainer
         position="top-center"
         hideProgressBar={true}
         closeOnClick
