@@ -256,9 +256,9 @@ const Wallet = () => {
                 <thead className="bg-white flex text-black shadow-md w-full">
                   <tr className="flex w-full mb-4">
                     <th className="p-4 w-1/4">Amount</th>
-                    <th className="p-4 w-1/4 invisible lg:visible">Debitor/Creditor</th>
+                    <th className="p-4 w-1/4 ">Debitor/Creditor</th>
                     <th className="p-4 invisible lg:visible w-1/4">Date</th>
-                    <th className="p-4  w-1/4">Type</th>
+                    <th className="p-4 invisible lg:visible w-1/4">Type</th>
                   </tr>
                 </thead>
 
@@ -280,7 +280,7 @@ const Wallet = () => {
                           {data.map((d) => (
                             <tr key={d.id} className="flex w-full ">
                               <td className="p-4 w-1/4">{d.amount}</td>
-                              <td className="p-4 w-1/4 invisible lg:visible">
+                              <td className="p-4 w-1/4 ">
                                 {" "}
                                 {d.debitorAccount == "0"
                                   ? "Fund Wallet"
@@ -291,7 +291,7 @@ const Wallet = () => {
                                 {d.createdAt}
                               </td>
                               {d.debitorAccount == user.number ? (
-                                <td className="pt-2 w-1/4">
+                                <td className="pt-2 w-1/4 invisible lg:visible">
                                   <button className="bg-red-200 text-red-600 font-bold py-2 px-4 rounded-full">
                                     Debit
                                   </button>
