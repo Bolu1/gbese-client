@@ -243,7 +243,7 @@ const Wallet = () => {
 
         {/* end of side bar */}
 
-        <div className="ml-auto mb-16 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+        <div className="ml-auto mb-16  lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
           {/* content */}
 
           <div className="p-8">
@@ -253,10 +253,10 @@ const Wallet = () => {
           <div>
             <div className="container px-8">
               <table className="text-left w-full">
-                <thead className="bg-white flex text-black shadow-md w-full">
+                <thead className="bg-white flex text-black mr-5 shadow-md">
                   <tr className="flex w-full mb-4">
                     <th className="p-4 w-1/4">Amount</th>
-                    <th className="p-4 w-1/4 ">Debitor/Creditor</th>
+                    <th className="p-4 w-1/4">Debitor/Creditor</th>
                     <th className="p-4 invisible lg:visible w-1/4">Date</th>
                     <th className="p-4 invisible lg:visible w-1/4">Type</th>
                   </tr>
@@ -264,7 +264,7 @@ const Wallet = () => {
 
                 <tbody
                   className="bg-grey-light flex flex-col items-center  overflow-x-scroll w-full"
-                  style={{ height: "50vh", overflowX: "scroll" }}
+                  style={{ height: "50vh", overflow: "scroll" }}
                 >
                   {loading ? (
                     <div className="flex items-center justify-center mt-8 space-x-2">
@@ -273,14 +273,13 @@ const Wallet = () => {
                       <div className="w-4 h-4 rounded-full motion-safe:animate-bounce animate-pulse bg-green-400"></div>
                     </div>
                   ) : (
-                    <div 
-                    style={{  overflowX: "scroll" }}>
+                    <>
                       {data.length ? (
                         <>
                           {data.map((d) => (
                             <tr key={d.id} className="flex w-full ">
                               <td className="p-4 w-1/4">{d.amount}</td>
-                              <td className="p-4 w-1/4 ">
+                              <td className="p-4 w-1/4">
                                 {" "}
                                 {d.debitorAccount == "0"
                                   ? "Fund Wallet"
@@ -291,13 +290,13 @@ const Wallet = () => {
                                 {d.createdAt}
                               </td>
                               {d.debitorAccount == user.number ? (
-                                <td className="pt-2 w-1/4 invisible lg:visible">
+                                <td className="pt-2 invisible lg:visible w-1/4">
                                   <button className="bg-red-200 text-red-600 font-bold py-2 px-4 rounded-full">
                                     Debit
                                   </button>
                                 </td>
                               ) : (
-                                <td className=" pt-2 w-1/4 invisible lg:visible">
+                                <td className=" pt-2 invisible lg:visible w-1/4">
                                   <button className="bg-green-200  text-green-600 font-bold py-2 px-4 rounded-full">
                                     Credit
                                   </button>
@@ -311,7 +310,7 @@ const Wallet = () => {
                           No records found
                         </div>
                       )}
-                    </div>
+                    </>
                   )}
                 </tbody>
               </table>
