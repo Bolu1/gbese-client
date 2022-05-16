@@ -297,7 +297,7 @@ const Wallet = () => {
                                   </button>
                                 </td>
                               ) : (
-                                <td className=" pt-2 w-1/4">
+                                <td className=" pt-2 w-1/4 invisible lg:visible">
                                   <button className="bg-green-200  text-green-600 font-bold py-2 px-4 rounded-full">
                                     Credit
                                   </button>
