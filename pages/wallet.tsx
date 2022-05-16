@@ -789,7 +789,7 @@ const Wallet = () => {
 
         <div
           style={{ top: "95vh" }}
-          className=" flex space-x-5 lg:hidden  w-full px-5 py-4 flex-shrink-0 justify-between fixed  bg-white rounded-md text-indigo-600"
+          className=" flex space-x-5 lg:hidden  w-full px-5 py-4 flex-shrink-0 justify-between  bg-white rounded-md text-indigo-600"
           aria-hidden="true"
         >
           <svg
