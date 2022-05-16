@@ -65,7 +65,7 @@ const Wallet = () => {
       );
       router.push(response.data);
     } catch (error) {
-      console.log(error);
+      //nsole.log(error);
       setLoading(false);
     }
     setLoading(false);
@@ -89,7 +89,7 @@ const Wallet = () => {
       setLoading(false);
     } catch (error) {
       setAccountName("");
-      console.log(error);
+      //nsole.log(error);
       toast.error("This account number is not a Gbese account number");
       setLoading(false);
     }
@@ -119,7 +119,7 @@ const Wallet = () => {
         );
         return setLoading(false);
       }
-      console.log(user.token);
+      //nsole.log(user.token);
       const response = await axios.post(
         "https://gbese-client.herokuapp.com/transaction/transfer",
         {
@@ -134,7 +134,7 @@ const Wallet = () => {
           },
         }
       );
-      console.log(response.data);
+      //nsole.log(response.data);
       if (response.data == false) {
         toast.error("Incorrect Pin");
         return setLoading(false);
@@ -146,7 +146,7 @@ const Wallet = () => {
       router.push("/dashboard");
     } catch (error) {
       toast.error("Something went wrong");
-      console.log(error);
+      //nsole.log(error);
       setLoading(false);
     }
     setLoading(false);
@@ -156,7 +156,7 @@ const Wallet = () => {
     try {
       setLoading(true);
       const b = banks.find((b) => b.name == bank);
-      console.log(b, account);
+      //nsole.log(b, account);
       const { data } = await axios.get(
         `https://api.paystack.co/bank/resolve?account_number=${account}&bank_code=${b.code}`,
         {
@@ -172,7 +172,7 @@ const Wallet = () => {
       toast.error("This account number doesn't belong to this bank");
       setLoading(false);
       setAccountName("");
-      console.log(error);
+      //nsole.log(error);
     }
   };
 
@@ -197,7 +197,7 @@ const Wallet = () => {
         setBalance(data.balance);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        //nsole.log(error);
         setLoading(false);
       }
     };
@@ -227,7 +227,7 @@ const Wallet = () => {
             </div>
 
             <div className="mt-8 text-center">
-              {user.profile == "" ? (
+              {user.profile == null ? (
                 <p className="text-8xl">🙆🏾‍♂️</p>
               ) : (
                 <>
@@ -695,7 +695,7 @@ const Wallet = () => {
                   value={bank}
                   onChange={(e) => {
                     setBank(e.target.value);
-                    console.log(e.target.value);
+                    //nsole.log(e.target.value);
                   }}
                   style={{ paddingRight: "300px", paddingBottom: "5px" }}
                 >

@@ -28,7 +28,7 @@ const Wallet = () => {
   const transferHandler = async () => {
     setLoading(true);
     try {
-      console.log(user.token);
+      //nsole.log(user.token);
       const response = await axios.get(
         "https://gbese-client.herokuapp.com/transaction/history",
         {
@@ -37,13 +37,13 @@ const Wallet = () => {
           },
         }
       );
-      console.log(response.data);
+      //nsole.log(response.data);
       setLoading(false);
       toast.success("Transaction Successful");
       router.push("/dashboard");
     } catch (error) {
       toast.error("Something went wrong");
-      console.log(error);
+      //nsole.log(error);
       setLoading(false);
     }
     setLoading(false);
@@ -61,10 +61,10 @@ const Wallet = () => {
           }
         );
         setData(data);
-        console.log(data);
+        //nsole.log(data);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        //nsole.log(error);
         setLoading(false);
       }
     };
@@ -94,7 +94,7 @@ const Wallet = () => {
             </div>
 
             <div className="mt-8 text-center">
-              {user.profile == "" ? (
+              {user.profile == null ? (
                 <p className="text-8xl">🙆🏾‍♂️</p>
               ) : (
                 <>

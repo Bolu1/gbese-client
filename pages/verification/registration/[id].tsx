@@ -17,10 +17,10 @@ const VerifyEmail = () => {
         }
       );
       router.push("/auth/login");
-      console.log(response);
+      //nsole.log(response);
     } catch (error) {
       // return toast.error("Invalid or expired link")
-      console.log(error);
+      //nsole.log(error);
     }
   };
   const router = useRouter();

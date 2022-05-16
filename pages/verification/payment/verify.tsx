@@ -22,7 +22,7 @@ const Verify = () => {
       router.push("/dashboard");
     } catch (error) {
       toast.error("This transaction was not processed");
-      console.log(error);
+      //nsole.log(error);
     }
   };
   const router = useRouter();

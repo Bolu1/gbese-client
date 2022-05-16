@@ -40,7 +40,7 @@ const Dashboard = () => {
       setBalance(data.balance);
       setRefresh(false);
     } catch (error) {
-      console.log(error);
+      //nsole.log(error);
       setRefresh(false);
     }
   };
@@ -59,7 +59,7 @@ const Dashboard = () => {
         setBalance(data.balance);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        //nsole.log(error);
         setLoading(false);
       }
     };
@@ -96,7 +96,7 @@ const Dashboard = () => {
               </div>
 
               <div className="mt-8 text-center">
-                {user.profile == "" ? (
+                {user.profile == null ? (
                   <p className="text-8xl">🙆🏾‍♂️</p>
                 ) : (
                   <>

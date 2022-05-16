@@ -32,7 +32,7 @@ const Dashboard = () => {
   }, [setUser]);
 
   const submitHandler = async (e) => {
-    console.log(fname, lname, phone, image);
+    //nsole.log(fname, lname, phone, image);
     try {
       setLoading(true);
       const { data } = await axios.patch(
@@ -52,12 +52,12 @@ const Dashboard = () => {
       Cookie.remove("user");
       router.push("/auth/login");
     } catch (error) {
-      console.log(error);
+      //nsole.log(error);
     }
   };
 
   const setI = (i) => {
-    //  console.log(i)
+    //  //nsole.log(i)
     const im = JSON.stringify(i.base64);
     setImage(i.base64);
   };

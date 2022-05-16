@@ -30,11 +30,11 @@ const Register = () => {
         "https://gbese-client.herokuapp.com/auth/signup",
         { email, password, lastName, firstName, phone }
       );
-      console.log(response);
+      //nsole.log(response);
       router.push("/notification/confirm");
     } catch (e) {
       toast.error("Email already in use");
-      console.log(e);
+      //nsole.log(e);
     }
 
     setLoading(false);

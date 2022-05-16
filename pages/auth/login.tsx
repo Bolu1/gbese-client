@@ -19,7 +19,7 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      console.log(email, password);
+      //nsole.log(email, password);
       const { data } = await axios.post(
         "https://gbese-client.herokuapp.com/auth/signin",
         { email, password }
@@ -29,7 +29,7 @@ const Register = () => {
         ...data,
         profile: null,
       };
-      console.log(payload);
+      //nsole.log(payload);
       Cookies.set("user", JSON.stringify(payload), { expires: 1 / 24 });
       router.push("/dashboard");
     } catch (e) {
@@ -42,7 +42,7 @@ const Register = () => {
       }
       toast.error("Invalid login params");
 
-      // console.log(e);
+      // //nsole.log(e);
     }
 
     setLoading(false);
