@@ -60,7 +60,7 @@ const Register = () => {
         className="flex justify-center bg-gray-100"
       >
         <div className="w-full max-w-sm p-6 m-auto bg-white rounded-md shadow-md :bg-gray-800">
-          <h1 className="text-3xl font-semibold text-center text-green-500 :text-white">
+          <h1 onClick={()=>router.push("/")} className="text-3xl font-semibold cursor-pointer text-center text-green-500 :text-white">
             Gbese
           </h1>
 
@@ -83,12 +83,6 @@ const Register = () => {
                 <label className="block text-sm text-gray-800 :text-gray-200">
                   Password
                 </label>
-                <a
-                  href="#"
-                  className="text-xs text-gray-600 :text-gray-400 hover:underline"
-                >
-                  Forget Password?
-                </a>
               </div>
 
               <input

@@ -52,7 +52,7 @@ const Register = () => {
         className="flex justify-center bg-gray-100"
       >
         <div className="w-full max-w-sm p-6 m-auto bg-white rounded-md shadow-md :bg-gray-800">
-          <h1 className="text-3xl font-semibold text-center text-green-500 :text-white">
+          <h1 onClick={()=>router.push("/")} className="text-3xl font-semibold text-center cursor-pointer text-green-500 :text-white">
             Gbese
           </h1>
 
