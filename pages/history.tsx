@@ -321,10 +321,10 @@ const Wallet = () => {
         {/* bottom nav for mobile */}
 
         <div
-          style={{ top: "90vh" }}
-          className=" flex space-x-5 lg:hidden  w-full px-5 py-4 flex-shrink-0 justify-between  bg-white rounded-md text-indigo-600"
-          aria-hidden="true"
-        >
+            style={{ top: "100vh" }}
+            className=" flex space-x-5 lg:hidden  w-full px-5 py-4 mt-5 flex-shrink-0 justify-between  bg-white rounded-md text-indigo-600"
+            aria-hidden="true"
+          >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8"
