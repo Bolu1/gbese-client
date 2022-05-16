@@ -484,8 +484,8 @@ const Wallet = () => {
         {fund && (
           <div className="flex justify-end">
             <div
-              style={{ width: "60vw", top: "0vh", overflow: "scroll" }}
-              className="shadow-2xl space-x-5 justify-between fixed bg-white h-full  text-indigo-600"
+              style={{  top: "0vh", overflow: "scroll" }}
+              className="shadow-2xl space-x-5 justify-between w-full lg:w-2/4 half fixed bg-white h-full  text-indigo-600"
               aria-hidden="true"
             >
               <div className="bg-gray-100 flex">
@@ -504,9 +504,11 @@ const Wallet = () => {
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
+                <div>
                 <p className="text-gray-600 p-5 text-xl font-medium">
                   Fund Wallet
                 </p>
+                  </div>
               </div>
               <div className="mt-5">
                 <label className="block text-lg my-3 text-gray-600 :text-gray-200">
@@ -537,6 +539,11 @@ const Wallet = () => {
                     </div>
                   )}
                 </div>
+
+                <p className="text-gray-600 mt-5 text-sm font-medium">
+                    Payment processor is set to test mode so we won't be sending real money, if it was in normal mode
+                    the process will stay the same
+                  </p>
               </div>
               <div></div>
             </div>
@@ -547,9 +554,9 @@ const Wallet = () => {
 
         {transfer && (
           <div className="flex justify-end">
-            <div
-              style={{ width: "60vw", top: "0vh", overflow: "scroll" }}
-              className="shadow-2xl space-x-5 justify-between fixed bg-white h-full  text-indigo-600"
+               <div
+              style={{  top: "0vh", overflow: "scroll" }}
+              className="shadow-2xl space-x-5 justify-between w-full lg:w-2/4 half fixed bg-white h-full  text-indigo-600"
               aria-hidden="true"
             >
               <div className="bg-gray-100 flex">
@@ -656,9 +663,9 @@ const Wallet = () => {
 
         {pay && (
           <div className="flex justify-end">
-            <div
-              style={{ width: "60vw", top: "0vh", overflow: "scroll" }}
-              className="shadow-2xl space-x-5 justify-between fixed bg-white h-full  text-indigo-600"
+               <div
+              style={{  top: "0vh", overflow: "scroll" }}
+              className="shadow-2xl space-x-5 justify-between w-full lg:w-2/4 half fixed bg-white h-full  text-indigo-600"
               aria-hidden="true"
             >
               <div className="bg-gray-100 flex">
@@ -679,12 +686,13 @@ const Wallet = () => {
                 </svg>
                 <p className="text-gray-600 p-5 text-xl font-medium">
                   Send to account
-                  <span className="text-gray-600 text-sm font-medium">
-                    (We only support Nigerian banks, and won't be able to send
-                    due to demo mode, but account details will be retrived)
-                  </span>
                 </p>
               </div>
+
+              <p className="text-gray-600 text-center text-sm font-medium">
+                    We only support Nigerian banks, and won't be able to send
+                    due to demo mode, but account details will be retrived
+                  </p>
               <div className="mt-5">
                 <label className="block text-lg my-3 text-gray-600 :text-gray-200">
                   Bank

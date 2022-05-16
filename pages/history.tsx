@@ -243,7 +243,7 @@ const Wallet = () => {
 
         {/* end of side bar */}
 
-        <div className="ml-auto mb-16 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+        <div className="ml-auto mb-16 bg-green-500 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
           {/* content */}
 
           <div className="p-8">
