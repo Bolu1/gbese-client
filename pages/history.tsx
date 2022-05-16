@@ -243,7 +243,7 @@ const Wallet = () => {
 
         {/* end of side bar */}
 
-        <div className="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
+        <div className="ml-auto mb-16 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
           {/* content */}
 
           <div className="p-8">
@@ -322,7 +322,7 @@ const Wallet = () => {
 
         <div
             style={{ top: "100vh" }}
-            className=" flex space-x-5 lg:hidden  w-full px-5 py-4 mt-5 flex-shrink-0 justify-between  bg-white rounded-md text-indigo-600"
+            className=" flex space-x-5 lg:hidden  w-full px-5 py-4 mt-5 flex-shrink-0 justify-between rounded-md text-indigo-600"
             aria-hidden="true"
           >
           <svg
