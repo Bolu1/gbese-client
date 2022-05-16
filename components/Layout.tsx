@@ -29,20 +29,9 @@ import Image from "next/image";
 // the contents of the mobile nav
 const solutions = [
   {
-    name: "Save",
-    description:
-      "Get a better understanding of where your traffic is coming from.",
-    href: "/",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-</svg>
-    ),
-  },
-  {
     name: "FAQs",
     description: "Speak directly to your customers in a more meaningful way.",
-    href: "/search",
+    href: "/faq",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
       <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -52,7 +41,7 @@ const solutions = [
   {
     name: "About",
     description: "Your customers' data will be safe and secure.",
-    href: "/aboutus",
+    href: "/about",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -146,11 +135,6 @@ const Layout = ({ children, title }) => {
               </Popover.Button>
             </div>
             <Popover.Group as="nav" className="hidden md:flex space-x-10">
-              <Link href="/save" passHref>
-                <p className="text-base font-medium cursor-pointer :text-gray-300 text-gray-500 hover:text-gray-900">
-                  Save
-                </p>
-              </Link>
 
               <Link href="/faq" passHref>
                 <p className="text-base font-medium cursor-pointer :text-gray-300 text-gray-500 hover:text-gray-900">
@@ -332,28 +316,6 @@ const Layout = ({ children, title }) => {
       </Popover>
 
       {/* back to top */}
-
-      <div
-        style={{ top: "90vh", right: "10vh" }}
-        onClick={() => router.push("#")}
-        className="flex-shrink-0 cursor-pointer fixed h-6 w-6 bg-white rounded-md text-green-600"
-        aria-hidden="true"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 "
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={3}
-            d="M5 15l7-7 7 7"
-          />
-        </svg>
-      </div>
 
       <div style={{ minHeight: "90vh" }}>{children}</div>
 

@@ -208,18 +208,18 @@ const Home: NextPage = () => {
 
       {/* oga */}
 
-      <section className="bg-black ">
+      <section className="">
         <div className="container px-6 py-8 mx-auto">
           <div className="items-center lg:flex">
             <div className="lg:w-1/2">
-              <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
+              <h2 className="text-3xl font-bold text-gray-900 :text-gray-100">
                 Who we are
               </h2>
 
-              <p className="mt-4 text-gray-500 dark:text-gray-400 lg:max-w-md">
+              <p className="mt-4 text-gray-500 :text-gray-400 lg:max-w-md">
                 If you did not get the whole idea{" "}
                 <a
-                  className="font-bold text-green-600 dark:text-green-400"
+                  className="font-bold text-green-600 :text-green-400"
                   href="#"
                 >
                   @Gbese
@@ -232,7 +232,7 @@ const Home: NextPage = () => {
               <div className="flex items-center mt-6 -mx-2">
                 <a className="mx-2" href="#" aria-label="Twitter">
                   <svg
-                    className="w-5 h-5 text-gray-700 fill-current dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400"
+                    className="w-5 h-5 text-gray-700 fill-current :text-gray-200 hover:text-gray-600 :hover:text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >
@@ -242,7 +242,7 @@ const Home: NextPage = () => {
 
                 <a className="mx-2" href="#" aria-label="Facebook">
                   <svg
-                    className="w-5 h-5 text-gray-700 fill-current dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400"
+                    className="w-5 h-5 text-gray-700 fill-current :text-gray-200 hover:text-gray-600 :hover:text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >
@@ -252,7 +252,7 @@ const Home: NextPage = () => {
 
                 <a className="mx-2" href="#" aria-label="Linkden">
                   <svg
-                    className="w-5 h-5 text-gray-700 fill-current dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400"
+                    className="w-5 h-5 text-gray-700 fill-current :text-gray-200 hover:text-gray-600 :hover:text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >
@@ -262,7 +262,7 @@ const Home: NextPage = () => {
 
                 <a className="mx-2" href="#" aria-label="Github">
                   <svg
-                    className="w-5 h-5 text-gray-700 fill-current dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400"
+                    className="w-5 h-5 text-gray-700 fill-current :text-gray-200 hover:text-gray-600 :hover:text-gray-400"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 512 512"
                   >
@@ -296,32 +296,32 @@ const Home: NextPage = () => {
 	<div className="container mx-auto grid grid-cols-1 gap-8 lg:gap-20 md:px-10 md:pb-10 lg:grid-cols-2">
 		<div className="flex flex-col items-center mx-12 lg:mx-0">
 			<div className="relative text-center">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute top-0 left-0 w-8 h-8 dark:text-coolGray-700">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute top-0 left-0 w-8 h-8 :text-coolGray-700">
 					<path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
 					<path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
 				</svg>
 				<p className="px-6 py-1 text-lg italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatibus quibusdam, eligendi exercitationem molestias possimus facere.</p>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute bottom-0 right-0 w-8 h-8 dark:text-coolGray-700">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" className="absolute bottom-0 right-0 w-8 h-8 :text-coolGray-700">
 					<path d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
 					<path d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
 				</svg>
 			</div>
-			<span className="w-12 h-1 my-2 rounded-lg dark:bg-green-400"></span>
+			<span className="w-12 h-1 my-2 rounded-lg :bg-green-400"></span>
 			<p>Leroy Jenkins</p>
 		</div>
 		<div className="flex flex-col items-center max-w-lg mx-12 lg:mx-0">
 			<div className="relative text-center">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute top-0 left-0 w-8 h-8 dark:text-coolGray-700">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute top-0 left-0 w-8 h-8 :text-coolGray-700">
 					<path fill="currentColor" d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
 					<path fill="currentColor" d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
 				</svg>
 				<p className="px-6 py-1 text-lg italic">Accusantium illum cupiditate harum asperiores iusto quos quasi quis quae! Fugit doloribus, voluptatum quidem magnam velit excepturi nobis, reprehenderit ducimus incidunt quisquam quae veritatis, quos iure harum.</p>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute bottom-0 right-0 w-8 h-8 dark:text-coolGray-700">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="absolute bottom-0 right-0 w-8 h-8 :text-coolGray-700">
 					<path fill="currentColor" d="M280,185.143V416H496V16H457.6ZM464,384H312V198.857L464,54.1Z"></path>
 					<path fill="currentColor" d="M232,16H193.6L16,185.143V416H232ZM200,384H48V198.857L200,54.1Z"></path>
 				</svg>
 			</div>
-			<span className="w-12 h-1 my-2 rounded-lg dark:bg-green-400"></span>
+			<span className="w-12 h-1 my-2 rounded-lg :bg-green-400"></span>
 			<p>Leroy Jenkins</p>
 		</div>
 	</div>
