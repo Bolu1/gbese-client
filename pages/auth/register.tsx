@@ -31,7 +31,7 @@ const Register = () => {
         { email, password, lastName, firstName, phone }
       );
       //nsole.log(response);
-      router.push("/notification/confirm");
+      router.push("/auth/login");
     } catch (e) {
       toast.error("Email already in use");
       //nsole.log(e);
