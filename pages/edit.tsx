@@ -36,7 +36,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const { data } = await axios.patch(
-        "https://gbese-client.herokuapp.com/user/edit",
+        "https://gbese-server.onrender.com/user/edit",
         {
           firstName: fname || undefined,
           lastName: lname || undefined,

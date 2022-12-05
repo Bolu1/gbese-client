@@ -8,7 +8,7 @@ const VerifyEmail = () => {
   const tokenHandler = async (id) => {
     try {
       const response = await axios.get(
-        "https://gbese-client.herokuapp.com/auth/confirm",
+        "https://gbese-server.onrender.com/auth/confirm",
         {
           headers: {
             "Content-Type": "application/json",

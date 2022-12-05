@@ -52,7 +52,7 @@ const Wallet = () => {
         return setLoading(false);
       }
       const response = await axios.post(
-        "https://gbese-client.herokuapp.com/payment/init",
+        "https://gbese-server.onrender.com/payment/init",
         {
           amount: amount.toString(),
           message: "Fund Wallet",
@@ -75,7 +75,7 @@ const Wallet = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://gbese-client.herokuapp.com/user/getName",
+        "https://gbese-server.onrender.com/user/getName",
         {
           account: parseInt(account),
         },
@@ -121,7 +121,7 @@ const Wallet = () => {
       }
       //nsole.log(user.token);
       const response = await axios.post(
-        "https://gbese-client.herokuapp.com/transaction/transfer",
+        "https://gbese-server.onrender.com/transaction/transfer",
         {
           accountNumber: account.toString(),
           amount: amount.toString(),
@@ -180,7 +180,7 @@ const Wallet = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-client.herokuapp.com/user/me",
+          "https://gbese-server.onrender.com/user/me",
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -484,7 +484,7 @@ const Wallet = () => {
         {fund && (
           <div className="flex justify-end">
             <div
-              style={{  top: "0vh", overflow: "scroll" }}
+              style={{ top: "0vh", overflow: "scroll" }}
               className="shadow-2xl space-x-5 justify-between w-full lg:w-2/4 half fixed bg-white h-full  text-indigo-600"
               aria-hidden="true"
             >
@@ -505,10 +505,10 @@ const Wallet = () => {
                   />
                 </svg>
                 <div>
-                <p className="text-gray-600 p-5 text-xl font-medium">
-                  Fund Wallet
-                </p>
-                  </div>
+                  <p className="text-gray-600 p-5 text-xl font-medium">
+                    Fund Wallet
+                  </p>
+                </div>
               </div>
               <div className="mt-5">
                 <label className="block text-lg my-3 text-gray-600 :text-gray-200">
@@ -541,9 +541,10 @@ const Wallet = () => {
                 </div>
 
                 <p className="text-gray-600 mt-5 text-sm font-medium">
-                    Payment processor is set to test mode so we won't be sending real money, if it was in normal mode
-                    the process will stay the same
-                  </p>
+                  Payment processor is set to test mode so we won't be sending
+                  real money, if it was in normal mode the process will stay the
+                  same
+                </p>
               </div>
               <div></div>
             </div>
@@ -554,8 +555,8 @@ const Wallet = () => {
 
         {transfer && (
           <div className="flex justify-end">
-               <div
-              style={{  top: "0vh", overflow: "scroll" }}
+            <div
+              style={{ top: "0vh", overflow: "scroll" }}
               className="shadow-2xl space-x-5 justify-between w-full lg:w-2/4 half fixed bg-white h-full  text-indigo-600"
               aria-hidden="true"
             >
@@ -663,8 +664,8 @@ const Wallet = () => {
 
         {pay && (
           <div className="flex justify-end">
-               <div
-              style={{  top: "0vh", overflow: "scroll" }}
+            <div
+              style={{ top: "0vh", overflow: "scroll" }}
               className="shadow-2xl space-x-5 justify-between w-full lg:w-2/4 half fixed bg-white h-full  text-indigo-600"
               aria-hidden="true"
             >
@@ -690,9 +691,9 @@ const Wallet = () => {
               </div>
 
               <p className="text-gray-600 text-center text-sm font-medium">
-                    We only support Nigerian banks, and won't be able to send
-                    due to demo mode, but account details will be retrived
-                  </p>
+                We only support Nigerian banks, and won't be able to send due to
+                demo mode, but account details will be retrived
+              </p>
               <div className="mt-5">
                 <label className="block text-lg my-3 text-gray-600 :text-gray-200">
                   Bank

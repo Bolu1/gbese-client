@@ -30,7 +30,7 @@ const Wallet = () => {
     try {
       //nsole.log(user.token);
       const response = await axios.get(
-        "https://gbese-client.herokuapp.com/transaction/history",
+        "https://gbese-server.onrender.com/transaction/history",
         {
           headers: {
             authorization: `Bearer ${user.token}`,
@@ -53,7 +53,7 @@ const Wallet = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-client.herokuapp.com/transaction/history",
+          "https://gbese-server.onrender.com/transaction/history",
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -321,10 +321,10 @@ const Wallet = () => {
         {/* bottom nav for mobile */}
 
         <div
-            style={{ top: "100vh" }}
-            className=" flex space-x-5 lg:hidden  w-full px-5 py-4 mt-5 flex-shrink-0 justify-between rounded-md text-indigo-600"
-            aria-hidden="true"
-          >
+          style={{ top: "100vh" }}
+          className=" flex space-x-5 lg:hidden  w-full px-5 py-4 mt-5 flex-shrink-0 justify-between rounded-md text-indigo-600"
+          aria-hidden="true"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-8 w-8"

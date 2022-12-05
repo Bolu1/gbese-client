@@ -30,7 +30,7 @@ const Dashboard = () => {
     try {
       setRefresh(true);
       const { data } = await axios.get(
-        "https://gbese-client.herokuapp.com/user/me",
+        "https://gbese-server.onrender.com/user/me",
         {
           headers: {
             authorization: `Bearer ${user.token}`,
@@ -49,7 +49,7 @@ const Dashboard = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-client.herokuapp.com/user/me",
+          "https://gbese-server.onrender.com/user/me",
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -308,28 +308,28 @@ const Dashboard = () => {
               </div>
 
               <div className="flex justify-between p-6 border rounded-lg sm:p-8 dark:bg-coolGray-900 dark:text-coolGray-100">
-              <button
-              onClick={logoutHandler}
-              className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-700 text-red-600 group"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
-                />
-              </svg>
-              <span className=" text-gray-700 text-xl text-red-600">
-                Logout
-              </span>
-            </button>
+                <button
+                  onClick={logoutHandler}
+                  className="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-700 text-red-600 group"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-8 w-8"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
+                    />
+                  </svg>
+                  <span className=" text-gray-700 text-xl text-red-600">
+                    Logout
+                  </span>
+                </button>
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const Register = () => {
     try {
       //nsole.log(email, password);
       const { data } = await axios.post(
-        "https://gbese-client.herokuapp.com/auth/signin",
+        "https://gbese-server.onrender.com/auth/signin",
         { email, password }
       );
       localStorage.setItem("gbeseprofile", data.profile);
@@ -60,7 +60,10 @@ const Register = () => {
         className="flex justify-center bg-gray-100"
       >
         <div className="w-full max-w-sm p-6 m-auto bg-white rounded-md shadow-md :bg-gray-800">
-          <h1 onClick={()=>router.push("/")} className="text-3xl font-semibold cursor-pointer text-center text-green-500 :text-white">
+          <h1
+            onClick={() => router.push("/")}
+            className="text-3xl font-semibold cursor-pointer text-center text-green-500 :text-white"
+          >
             Gbese
           </h1>
 

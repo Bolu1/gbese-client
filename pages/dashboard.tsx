@@ -30,7 +30,7 @@ const Dashboard = () => {
     try {
       setRefresh(true);
       const { data } = await axios.get(
-        "https://gbese-client.herokuapp.com/user/me",
+        "https://gbese-server.onrender.com/user/me",
         {
           headers: {
             authorization: `Bearer ${user.token}`,
@@ -49,7 +49,7 @@ const Dashboard = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-client.herokuapp.com/user/me",
+          "https://gbese-server.onrender.com/user/me",
           {
             headers: {
               authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ const Dashboard = () => {
               </div>
 
               <div className="mt-8 text-center">
-                 {profile == "" ? (
+                {profile == "" ? (
                   <p className="text-8xl">🙆🏾‍♂️</p>
                 ) : (
                   <>
