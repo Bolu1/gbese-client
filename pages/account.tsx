@@ -30,7 +30,7 @@ const Dashboard = () => {
     try {
       setRefresh(true);
       const { data } = await axios.get(
-        "https://gbese-server.onrender.com/user/me",
+        "https://gbese-server-bolu1.koyeb.app/user/me",
         {
           headers: {
             authorization: `Bearer ${user.token}`,
@@ -49,7 +49,7 @@ const Dashboard = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-server.onrender.com/user/me",
+          "https://gbese-server-bolu1.koyeb.app/user/me",
           {
             headers: {
               authorization: `Bearer ${token}`,

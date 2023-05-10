@@ -21,7 +21,7 @@ const Register = () => {
     try {
       //nsole.log(email, password);
       const { data } = await axios.post(
-        "https://gbese-server.onrender.com/auth/signin",
+        "https://gbese-server-bolu1.koyeb.app/auth/signin",
         { email, password }
       );
       localStorage.setItem("gbeseprofile", data.profile);

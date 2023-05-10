@@ -36,7 +36,7 @@ const Dashboard = () => {
     try {
       setLoading(true);
       const { data } = await axios.patch(
-        "https://gbese-server.onrender.com/user/edit",
+        "https://gbese-server-bolu1.koyeb.app/user/edit",
         {
           firstName: fname || undefined,
           lastName: lname || undefined,

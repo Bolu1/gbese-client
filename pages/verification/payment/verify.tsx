@@ -9,7 +9,7 @@ const Verify = () => {
   const verify = async (reference, token) => {
     try {
       const response = await axios.post(
-        "https://gbese-server.onrender.com/payment/verify",
+        "https://gbese-server-bolu1.koyeb.app/payment/verify",
         {
           ref: reference,
         },

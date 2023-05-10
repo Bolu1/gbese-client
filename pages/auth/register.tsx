@@ -27,7 +27,7 @@ const Register = () => {
     }
     try {
       const response = await axios.post(
-        "https://gbese-server.onrender.com/auth/signup",
+        "https://gbese-server-bolu1.koyeb.app/auth/signup",
         { email, password, lastName, firstName, phone }
       );
       //nsole.log(response);

@@ -30,7 +30,7 @@ const Wallet = () => {
     try {
       //nsole.log(user.token);
       const response = await axios.get(
-        "https://gbese-server.onrender.com/transaction/history",
+        "https://gbese-server-bolu1.koyeb.app/transaction/history",
         {
           headers: {
             authorization: `Bearer ${user.token}`,
@@ -53,7 +53,7 @@ const Wallet = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-server.onrender.com/transaction/history",
+          "https://gbese-server-bolu1.koyeb.app/transaction/history",
           {
             headers: {
               authorization: `Bearer ${token}`,

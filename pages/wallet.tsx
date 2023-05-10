@@ -52,7 +52,7 @@ const Wallet = () => {
         return setLoading(false);
       }
       const response = await axios.post(
-        "https://gbese-server.onrender.com/payment/init",
+        "https://gbese-server-bolu1.koyeb.app/payment/init",
         {
           amount: amount.toString(),
           message: "Fund Wallet",
@@ -75,7 +75,7 @@ const Wallet = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "https://gbese-server.onrender.com/user/getName",
+        "https://gbese-server-bolu1.koyeb.app/user/getName",
         {
           account: parseInt(account),
         },
@@ -121,7 +121,7 @@ const Wallet = () => {
       }
       //nsole.log(user.token);
       const response = await axios.post(
-        "https://gbese-server.onrender.com/transaction/transfer",
+        "https://gbese-server-bolu1.koyeb.app/transaction/transfer",
         {
           accountNumber: account.toString(),
           amount: amount.toString(),
@@ -180,7 +180,7 @@ const Wallet = () => {
     const fetch = async (token: any) => {
       try {
         const { data } = await axios.get(
-          "https://gbese-server.onrender.com/user/me",
+          "https://gbese-server-bolu1.koyeb.app/user/me",
           {
             headers: {
               authorization: `Bearer ${token}`,
